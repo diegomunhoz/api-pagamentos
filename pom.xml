@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.food</groupId>
-	<artifactId>api-pagamentos</artifactId>
+	<artifactId>pagamentos-ms</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pagamentos</name>
 	<description>Ms de Serviços de pagamentos</description>
