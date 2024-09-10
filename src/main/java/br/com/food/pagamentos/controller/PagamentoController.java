@@ -29,16 +29,13 @@ public class PagamentoController {
     @GetMapping("/{id}")
     public ResponseEntity<PagamentoDto> detalhar(@PathVariable @NotNull Long id) {
         PagamentoDto dto = service.obterPorId(id);
-
         return ResponseEntity.ok(dto);
     }
-
 
     @PostMapping
     public ResponseEntity<PagamentoDto> cadastrar(@RequestBody @Valid PagamentoDto dto, UriComponentsBuilder uriBuilder) {
         PagamentoDto pagamento = service.criarPagamento(dto);
         URI endereco = uriBuilder.path("/pagamentos/{id}").buildAndExpand(pagamento.getId()).toUri();
-
         return ResponseEntity.created(endereco).body(pagamento);
     }
 

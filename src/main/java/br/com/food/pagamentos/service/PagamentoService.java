@@ -21,7 +21,6 @@ public class PagamentoService {
     @Autowired
     private ModelMapper modelMapper;
 
-
     public Page<PagamentoDto> obterTodos(Pageable paginacao) {
         return repository
                 .findAll(paginacao)
@@ -47,14 +46,13 @@ public class PagamentoService {
         Pagamento pagamento = modelMapper.map(dto, Pagamento.class);
         pagamento.setId(id);
         pagamento = repository.save(pagamento);
+
         return modelMapper.map(pagamento, PagamentoDto.class);
     }
 
     public void excluirPagamento(Long id) {
         repository.deleteById(id);
     }
-
-
 
 }
 
